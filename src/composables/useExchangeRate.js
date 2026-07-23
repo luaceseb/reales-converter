@@ -1,4 +1,5 @@
 import { ref, computed } from 'vue'
+import { fixedExchangeRates } from '../data/exchangeRates'
 
 export function useExchangeRate() {
   const rates = ref({})
@@ -13,12 +14,7 @@ export function useExchangeRate() {
     error.value = null
 
     try {
-      // TODO: conectar con API de cotizaciones
-      rates.value = {
-        USD: 0,
-        ARS: 0,
-        EUR: 0,
-      }
+      rates.value = fixedExchangeRates
     } catch (err) {
       error.value = err.message ?? 'No se pudieron obtener las cotizaciones'
     } finally {
