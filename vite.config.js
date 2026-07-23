@@ -31,15 +31,6 @@ export default defineConfig({
         // so scanning remains available while offline.
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         navigateFallback: 'index.html',
-        runtimeCaching: [{
-          urlPattern: /^https:\/\/api\.frankfurter\.dev\/v2\/rate\//,
-          handler: 'NetworkFirst',
-          options: {
-            cacheName: 'exchange-rates',
-            networkTimeoutSeconds: 5,
-            expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 7 },
-          },
-        }],
       },
     }),
   ],

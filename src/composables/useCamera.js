@@ -11,7 +11,11 @@ export function useCamera() {
 
     try {
       stream.value = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'environment' },
+        video: {
+          facingMode: { ideal: 'environment' },
+          width: { ideal: 1920 },
+          height: { ideal: 1080 },
+        },
       })
 
       if (videoRef.value) {
@@ -33,7 +37,7 @@ export function useCamera() {
   }
 
   function captureFrame() {
-    if (!videoRef.value) return null
+    if (!videoRef.value?.videoWidth || !videoRef.value?.videoHeight) return null
 
     const canvas = document.createElement('canvas')
     canvas.width = videoRef.value.videoWidth

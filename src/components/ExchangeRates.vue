@@ -25,14 +25,7 @@ defineEmits(['refresh'])
   <section class="exchange-rates card">
     <header class="exchange-rates__header">
       <h2 class="card__title exchange-rates__title">Cotizaciones</h2>
-      <button
-        type="button"
-        class="btn btn--ghost"
-        :disabled="loading"
-        @click="$emit('refresh')"
-      >
-        {{ loading ? 'Actualizando...' : 'Actualizar' }}
-      </button>
+      <span class="exchange-rates__offline">Valores incluidos en la app</span>
     </header>
 
     <p v-if="error" class="exchange-rates__error">{{ error }}</p>
@@ -58,6 +51,12 @@ defineEmits(['refresh'])
 
 .exchange-rates__title {
   margin-bottom: 0;
+}
+
+.exchange-rates__offline {
+  color: var(--color-text-subtle);
+  font-size: 0.75rem;
+  text-align: right;
 }
 
 .exchange-rates__list {
