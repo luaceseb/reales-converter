@@ -1,0 +1,1 @@
+{"name":"Reales Converter","short_name":"Reales","description":"Escaneá precios en reales y convertílos aun sin conexión.","start_url":"./","display":"standalone","background_color":"#0f172a","theme_color":"#0f172a","lang":"es","scope":"./","id":"/reales-converter/","icons":[{"src":"pwa-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
